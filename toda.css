@@ -1,0 +1,433 @@
+body {
+	margin: 0px auto;
+	background-color: #EEEEEE;
+	font: 13px Verdana,Arial,Helvetica;
+	width: 636px;
+	height: 382px;
+	cursor: default;
+	position: relative
+}
+img {
+	border: 0
+}
+#main {
+	position: absolute;
+	overflow: hidden;
+	left: 0px;
+	top: 0px;
+	width: 570px;
+	height: 380px;
+	background-color: #DDDDDD;
+	background-repeat: no-repeat;
+	border: 1px solid #B1B1B1;
+}
+#txt {
+	position: absolute;
+	left: 1px;
+	top: 360px;
+	width: 570px;
+	height: 22px;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	text-shadow: black 2px 2px 3px
+}
+#items {
+	position: absolute;
+	left: 590px;
+	top: 8px;
+	overflow: hidden;
+	width: 46px;
+	height: 382px;
+	text-align: center
+}
+#items ul {
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+#items li {
+	width: 46px;
+	height: 46px;
+	float: left;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	cursor: pointer
+}
+#items li.use {
+	background-color: #0000a0;
+	cursor: default;
+	opacity: 0.7
+}
+.room {display: none; height: 100%; overflow: hidden}
+.room * {position: absolute; cursor: pointer}
+.blueman {
+	width: 80px;
+	height: 20px;
+	background-color: #8db5d4;
+	border: 1px solid #6a7eb4;
+	border-bottom: 0
+}
+.blueman div {
+	top: 7px;
+	width: 12px;
+	height: 6px;
+	font-size: 0;
+}
+.OFF {
+	left: 10px;
+	background-color: #a4c3b1
+}
+.LED1 {
+	left: 10px;
+	background-color: #ecc096
+}
+.LED2 {
+	left: 34px;
+	background-color: #83e3ac
+}
+.LED3 {
+	left: 58px;
+	background-color: #eceb96
+}
+.door {
+	top: 130px;
+	left: 339px;
+	width: 90px;
+	height: 180px
+}
+.side {
+	top: 110px;
+	left: 12px;
+	width: 65px;
+	height: 240px
+}
+.scan {
+	top: 256px;
+	left: 156px;
+	width: 37px;
+	height: 22px;
+	background-color: #d5e0e3;
+	border: 1px solid #636363
+}
+.card {
+	top: 210px;
+	left: 134px;
+	width: 20px;
+	height: 10px;
+	font-size: 7px;
+	color: #3689c9;
+	padding: 1px 0 0 2px;
+	background-color: #94c7c9;
+	border: 1px solid #79aaac
+}
+.back {
+	top: 320px;
+	width: 100%;
+	height: 60px;
+	z-index: 9;
+	cursor: zoom-out
+}
+.calc {
+	top: 135px;
+	left: 105px;
+	width: 360px;
+	height: 110px;
+	background-color: #DCC6A4;
+	border: 1px solid #BCAA8C;
+	cursor: default;
+	outline: 5px outset #CCB69C
+	/*background-image: url(1/calc.png) sloty #D2BB97 blaszki #ABA657 obr cien #BCAA8C tekst #A18A67 obr pola #577768 przyc #E0E0E0 obr przyc #C1C1C1 */
+}
+.calc div {
+	top: 65px;
+	width: 26px;
+	height: 26px;
+	text-align: center;
+	line-height: 25px;
+	background-color: #E0E0E0;
+	border: 1px outset #777
+}
+.calc div:active {
+	border-style: inset
+}
+.calc input {
+	top: 18px;
+	left: 15px;
+	width: 170px;
+	height: 22px;
+	color: white;
+	padding: 2px;
+	font: bold 18px Verdana,Arial,Helvetica,Sans;
+	background-color: #6E8F80;
+	border: 1px solid #577768
+}
+.calc input.shift {
+	background-color: #8EAFA0
+}
+#slot1,#slot2,#slot3 {
+	top: 17px;
+	width: 32px;
+	height: 26px;
+	background-color: #D2BB97;
+	border: 2px inset #D2BB97;
+	text-align: center;
+	line-height: 26px;
+	color: #826637;
+	display: none
+}
+.ins {
+	border: 0 !important;
+	width: 36px !important;
+	height: 30px !important;
+	font-size: 0;
+	content: ""
+}
+.calc img[src] {
+	border: 0;
+	width: 36px;
+	height: 30px;
+	content: normal
+}
+#ogg {
+	top: 65px;
+	left: 85px;
+	width: 400px;
+	height: 250px;
+	background-color: #4A4A4A;
+	border-radius: 16px;
+	box-shadow: 0px 4px 0px #333333; /*Opera 2px bug*/
+	color: white
+}
+#mlcd {
+	background-color: black;
+	top: 24px;
+	left: 28px;
+	width: 340px;
+	height: 202px;
+	border: 1px inset black;
+	transition: all 0.5s ease-out
+}
+#mlcd.on {
+	background-color: #444B51
+}
+#mboot {
+	width: 340px;
+	opacity: 0;
+	transition: opacity 0.5s linear;
+	font: bold 24px 'DejaVu Sans',Sans,Arial;
+	line-height: 200px;
+	text-align: center
+}
+#minfo {
+	width: 300px;
+	padding: 20px;
+	font: bold 18px 'DejaVu Sans',Sans,Arial;
+	line-height: 32px;
+	white-space: pre-line
+}
+#minfo:first-line {
+	color: yellow;
+	line-height: 48px
+}
+#mbody {
+	top: 93px;
+	left: 58px;
+	width: 250px;
+	font: 15px 'DejaVu Sans',Sans,Arial;
+	line-height: 20px;
+	white-space: pre-line;
+	overflow: hidden
+}
+#mlist {
+	width: 100%
+}
+#mlist div {
+	position: static;
+	line-height: 50px;
+	min-height: 50px;
+	padding: 0 15px;
+	border-bottom: 1px solid #888;
+	font-weight: bold;
+	font-size: 18px
+}
+#mlist div:active {
+	background-image: linear-gradient(to top, rgb(45,78,133) 0%, rgb(133,175,237) 100%)
+}
+#mlist div:last-child {
+	border: 0
+}
+#mgame * {
+	position: static;
+	overflow: hidden
+}
+#mlets div {
+	float: left;
+	width: 68px;
+	height: 60px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 60px
+}
+#mword {
+	margin: 20px 50px;
+	padding: 5px;
+	border: 1px dashed white;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px
+}
+#mlets div:active {
+	background-image: radial-gradient(ellipse at center, rgb(133,175,237) 0%, rgb(45,78,133) 100%);
+	border-radius: 30px
+}
+#plat, #pin {
+	top: 240px;
+	left: 35px;
+	width: 146px;
+	height: 43px
+}
+#plat {
+	background-color: #c3e3a4;
+	border: 2px groove #adc993;
+	color: green;
+	text-align: center;
+	line-height: 40px
+}
+#plat.off {
+	top: 290px;
+}
+#roman {
+	top: 135px;
+	left: 174px;
+	width: 145px;
+	text-align: center;
+	font: bold 18px Verdana,Arial;
+	color: #3366CC
+}
+#touch {
+	left: 210px;
+	top: 111px;
+	width: 215px;
+	height: 155px;
+	color: #8080ff;
+	display: none;
+	background-color: white;
+	transition: opacity 9s linear;
+	text-align: center;
+	font: bold 30px Calibri,Verdana,Arial;
+	padding: 9px 5px;
+	line-height: 155px;
+	opacity: 0.1
+}
+.touch * {
+	position: static
+}
+#cl1, #cl2 {
+	top: 171px;
+	left: 56px;
+}
+#disk3 {
+	top: 4px;
+	left: 60px;
+	width: 21px;
+	height: 8px;
+	border: 1px solid #6fba98;
+	background-color: #83d4af
+}
+#cab1, #cab2 {
+	top: 258px;
+	left: 174px
+}
+#LCD {
+	top: 196px;
+	left: 214px;
+	width: 123px;
+	height: 82px;
+	padding: 9px 12px;
+	font: bold 14px Consolas,Arial,Helvetica,Sans;
+	text-align: center;
+	line-height: 16px;
+	white-space: pre;
+	overflow: hidden;
+	color: white
+}
+#kbd {
+	top: 85px;
+	left: 40px;
+	width: 499px;
+	height: 262px;
+	background: url(1/kbd.png) no-repeat;
+	pointer-events: pan-left, pan-right, pan-up, pan-down
+}
+#leaf {
+	top: 280px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 30px;
+	color: #947a23
+}
+#compbtn {
+	left: 389px;
+	top: 283px;
+	width: 24px;
+	height: 10px;
+	font-size: 0
+}
+#compbtn.on {
+	background: lime
+}
+#cld {
+	top: 165px;
+	left: 173px;
+	width: 96px;
+	color: white;
+	text-align: center;
+	font: bold 16px Arial,Helvetica,Sans;
+	text-shadow: 0px 0px 8px yellow
+}
+#orderbox {
+	left: 210px;
+	top: 111px;
+	width: 225px;
+	height: 173px;
+	background-color: white;
+}
+#orderbox * {
+	position: static;
+}
+#orderbox td {
+	width: 30px;
+	height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	color: #8080ff;
+	font: bold 18px Verdana,Arial
+}
+#oderbox td:empty {
+	background-color: red
+}
+#end {
+	width: 570px;
+	height: 380px;
+	font: bold 18px Calibri,Verdana,Helvetica,Arial,Sans;
+	text-shadow: 1px 1px 1px black;
+	text-align: center;
+	line-height: 80px;
+	color: yellow;
+	transition: all 5s linear
+}
+#endimg {
+	width: 570px;
+	height: 380px;
+	transition: all 30s ease-in
+}
+@media(min-height: 383px) {
+	body {
+		top: calc(50vh - 191px)
+	}
+}

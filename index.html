@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=636, height=auto" />
+	<meta name="Robots" content="noindex">
+	<link rel="stylesheet" type="text/css" href="toda.css">
+	<title>TODA</title>
+</head>
+<body>
+	<div id="main">
+		<!-- MAIN 0 -->
+		<div class="room">
+			<div class="blueman" style="left: 181px; top: 104px" onmousedown="MAN.LED()">
+				<div id="led1" class="OFF" onmousedown="MAN.LED(1)"></div>
+				<div id="led2" class="OFF" style="left: 34px" onmousedown="MAN.LED(2)"></div>
+				<div id="led3" class="OFF" style="left: 58px" onmousedown="MAN.LED(3)"></div>
+			</div>
+			<div class="door" onmousedown="go(4)"></div>
+			<div class="side" onmousedown="go(3)"></div>
+			<div class="side" onmousedown="go(1)" style="left: 492px"></div>
+			<div id="cld"></div>
+			<div style="left: 143px; top: 193px; width: 34px; height: 34px" onmousedown="CLOCK.ball(1)"></div>
+			<div style="left: 183px; top: 193px; width: 34px; height: 34px" onmousedown="CLOCK.ball(2)"></div>
+			<div style="left: 223px; top: 193px; width: 34px; height: 34px" onmousedown="CLOCK.ball(3)"></div>
+			<div style="left: 263px; top: 193px; width: 34px; height: 34px" onmousedown="CLOCK.ball(4)"></div>
+			<div style="left: 135px; top: 110px; width: 40px; height: 15px" onmousedown="find('key')"></div>
+			<div style="left: 265px; top: 110px; width: 40px; height: 15px" onmousedown="find('sd')"></div>
+			<div class="scan" onmousedown="SCAN()"></div>
+		</div>
+		<!-- OFFICE 1 -->
+		<div class="room">
+			<div class="side" onmousedown="go(0)"></div>
+			<div id="compbtn" onmousedown="COMP.turn()"></div>
+			<div style="left: 382px; top: 229px; width: 37px; height: 16px" onmousedown="COMP.CD(1)"></div>
+			<div style="left: 382px; top: 245px; width: 37px; height: 16px" onmousedown="COMP.CD(2)"></div>
+			<div style="left: 382px; top: 265px; width: 37px; height: 14px" onmousedown="COMP.FD()"></div>
+			<div style="left: 190px; top: 320px; width: 260px; height: 20px" onmousedown="go(2)"></div>
+			<div id="LCD"></div>
+			<div style="left: 190px; top: 340px; width: 260px; height: 50px" onmousedown="say('nosit')"></div>
+			<div style="left: 325px; top: 105px; width: 67px; height: 67px" id="clock"></div>
+			<div style="left: 135px; top: 103px; width: 168px; height: 70px" onmousedown="say('rot13')"></div>
+			<div style="left: 450px; top: 260px; width: 55px; height: 35px" onmousedown="COMP.printer()"></div>
+			<div style="left: 454px; top: 327px; width: 80px; height: 30px" id="drawer">
+				<div id="dropen" style="display: none">
+					<img src="1/s.gif" onmousedown="hide(this.parentNode)">
+					<div style="background-image: url(1/cd.png); left: 9px; height: 14px; width: 42px" id="CD"></div>
+				</div>
+			</div>
+			<img src="1/fuse.png" alt="fuse" id="f1" style="left: 470px; top: 134px">
+		</div>
+		<!-- TABLE 2 -->
+		<div class="room" style="background-color: #e0ca7d">
+			<div class="back" onmousedown="go(1)"></div>
+			<img src="1/key.png" alt="key" style="left: 300px; top: 120px" id="key2">
+			<div id="leaf">(2-x)(-x+3)(x-5)(-6+x)</div>
+			<div id="kbd"></div>
+		</div>
+		<!-- MATH 3 -->
+		<div class="room">
+			<div style="left: 44px; top: 118px; width: 135px; height: 95px" onmousedown="say('win')"></div>
+			<div class="side" onmousedown="go(0)" style="left: 492px"></div>
+			<div class="card" id="card">VISA</div>
+			<div id="touch">TODA VISION</div>
+			<div id="pin"></div>
+			<div id="plat">AC / DC</div>
+		</div>
+		<!-- LIBRARY 4 -->
+		<div class="room">
+			<div class="side" onmousedown="go(5)" style="left: 0; width: 45px"></div>
+			<div class="door" style="left: 142px" onmousedown="go(0)"></div>
+			<div style="left: 290px; top: 145px; width: 55px; height: 40px" onmousedown="say('books')"></div>
+			<img id="cl2" src="1/cl1.png" onmousedown="closet()">
+			<img id="cl1" src="1/cl2.png" style="display: none" onmousedown="closet(1)">
+			<div style="left: 280px; top: 125px; width: 178px; height: 10px" onmousedown="find('f3')"></div>
+			<div style="left: 369px; top: 154px; width: 49px; height: 30px" onmousedown="go(7)"></div>
+		</div>
+		<!-- LAB 5 -->
+		<div class="room">
+			<div class="side" onmousedown="go(4)" style="left: 525px; width: 45px"></div>
+			<div class="door" onmousedown="finish()" style="left: 344px"></div>
+			<div style="left: 184px; top: 182px; width: 124px; height: 35px" onmousedown="go(6)"></div>
+			<img src="1/cab1.png" id="cab1" onmousedown="hide('cab1'); show('cab2')">
+			<div id="cab2" style="display: none" onmousedown="hide(this); show('cab1')">
+				<img src="1/cab2.gif" alt="O">
+				<div id="disk3"></div>
+			</div>
+			<div style="top: 128px; left: 54px; width: 70px; height: 30px" onmousedown="find('key3')"></div>
+			<div style="top: 188px; left: 30px; width: 114px; height: 60px" onmousedown="say('scale')"></div>
+			<div style="left: 105px; top: 223px; width: 30px; height: 15px" onmousedown="find('f4')"></div>
+			<div style="left: 135px; top: 10px; width: 210px; height: 30px" onmousedown="say('lamp')"></div>
+			<div id="roman"></div>
+		</div>
+		<!-- CALC 6 -->
+		<div class="room" style="background-color: #7CA9CC">
+			<div class="calc">
+				<div style="left: 14px" onmousedown="CALC.digit(1)">1</div>
+				<div style="left: 51px" onmousedown="CALC.digit(2)">2</div>
+				<div style="left: 89px" onmousedown="CALC.digit(3)">3</div>
+				<div style="left: 127px" onmousedown="CALC.digit(4)">4</div>
+				<div style="left: 165px" onmousedown="CALC.digit(5)">5</div>
+				<div style="left: 203px" onmousedown="CALC.digit(6)">6</div>
+				<div style="left: 241px" onmousedown="CALC.digit(7)">7</div>
+				<div style="left: 279px" onmousedown="CALC.digit(8)">8</div>
+				<div style="left: 316px" onmousedown="CALC.d9(this)">9</div>
+				<div id="slot1" style="left: 217px" onmousedown="CALC.slot(1,this)">m</div>
+				<div id="slot2" style="left: 263px" onmousedown="CALC.slot(2,this)">V</div>
+				<div id="slot3" style="left: 309px" onmousedown="CALC.slot(3,this)">°C</div>
+				<input id="disp" readonly>
+			</div>
+			<div class="back" onmousedown="go(5)"></div>
+		</div>
+		<!-- MOBILE 7 -->
+		<div class="room" style="background-color: #94b6b4">
+			<div id="ogg">
+				<div id="mlcd">
+					<div id="mboot" style="display:none">Visual Ogg Player</div>
+					<div id="minfo" style="display:none"></div>
+					<div id="mlist" style="display:none">
+						<div></div><div></div><div></div><div></div>
+					</div>
+					<div id="mgame" style="display:none">
+						<div id="mlets"></div>
+						<div id="mword"></div>
+					</div>
+				</div>
+			</div>
+			<div class="back" onmousedown="go(4)"></div>
+		</div>
+		<!-- END 8 -->
+		<div class="room">
+			<table id="orderbox">
+				<tr><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+				<tr><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+				<tr><td>8</td><td>9</td><td>A</td><td>B</td></tr>
+				<tr><td>C</td><td>D</td><td>E</td><td></td></tr>
+			</table>
+			<img src="1/end.png" id="endimg">
+			<div id="end"></div>
+		</div>
+	</div>
+	<div id="items"><ul></ul></div>
+	<div id="txt">Loading...</div>
+	<script type="text/javascript" id="langjs"></script>
+	<script type="text/javascript" src="toda.js"></script>
+	<script type="text/javascript" src="lv1.js"></script>
+	<script type="text/javascript" src="mobile.js"></script>
+</body>
+</html>
